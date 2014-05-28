@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+		  http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+           version="3.0">
+
+    <servlet>
+        <servlet-name>getHostlist</servlet-name>
+        <servlet-class>procPkg.getHostlist</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>getStatus</servlet-name>
+        <servlet-class>procPkg.getStatus</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>getHostlist</servlet-name>
+        <url-pattern>/servlet/getHostlist</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>getStatus</servlet-name>
+        <url-pattern>/servlet/getStatus</url-pattern>
+    </servlet-mapping>
+
+    <filter>
+		<filter-name>EncodingFilter</filter-name>
+		<filter-class>Filters.EncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>utf-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>EncodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+</web-app>
